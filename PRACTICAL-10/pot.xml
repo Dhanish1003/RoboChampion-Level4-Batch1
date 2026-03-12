@@ -1,0 +1,47 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="`b.^o2R_p*z5y=8+WQs=" x="74" y="65">
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="3HV-UOW7.Hlx?|!TA92?">
+        <mutation name="readAnalog"></mutation>
+        <next>
+          <block type="procedures_callnoreturn" id=",fGR~c8Okmw:/y~gmsK.">
+            <mutation name="voltagePrinter"></mutation>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="r~8pi5iU+FF}Ka.BS*XH" x="64" y="220">
+    <field name="NAME">readAnalog</field>
+    <comment pinned="false" h="80" w="160">set analog value to voltage variable</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="j1569)48I?3YfE{z`g[y">
+        <field name="VAR">voltage</field>
+        <value name="VALUE">
+          <block type="io_analogread" id="JcsLY#{_*hk6iijxq^6m">
+            <field name="PIN">A1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="serial_setup" id="a?e]v+ttp=0Ajc:cFw10" x="231" y="288">
+    <field name="SERIAL_ID">Serial</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="procedures_defnoreturn" id="x?rJ/Lm/bE;(/mb-l.AT" x="66" y="332">
+    <field name="NAME">voltagePrinter</field>
+    <comment pinned="false" h="80" w="160">prints the</comment>
+    <statement name="STACK">
+      <block type="serial_print" id="+}XSN}UMGg?*L77.rA?y">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="NEW_LINE">TRUE</field>
+        <value name="CONTENT">
+          <block type="variables_get" id="l46dXg12]{8_d8:b30rX">
+            <field name="VAR">voltage</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
