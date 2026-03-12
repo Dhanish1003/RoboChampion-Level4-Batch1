@@ -1,0 +1,150 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="q%3Fym=vuS_339(Hhi;7" x="58" y="41">
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="Svy6,Yh*DBqeF0p`DKUx">
+        <mutation name="ifObstacle"></mutation>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="JKox%v,g|]/emuP+%j(f" x="286" y="60">
+    <field name="NAME">stop</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="Ncpl^*fxM{t5D5f]-ZX8">
+        <field name="PIN">7</field>
+        <value name="STATE">
+          <block type="io_highlow" id="8EvPkaa6+C@9kAm];Mi;">
+            <field name="STATE">LOW</field>
+          </block>
+        </value>
+        <next>
+          <block type="io_digitalwrite" id="K`o,~1f_v-lzu6_jU;6U">
+            <field name="PIN">8</field>
+            <value name="STATE">
+              <block type="io_highlow" id="L!xxa8y]=Vb!Y(BFLT69">
+                <field name="STATE">LOW</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="/F!WxE`J(`iR5N6Iva02">
+                <field name="PIN">9</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="?rIT:@P`,nSDn71XuU4o">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id=";H(ve=6JGjo.A}O9BuN#">
+                    <field name="PIN">10</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="DC~nsb8Pg#/;j.^9Eco.">
+                        <field name="STATE">LOW</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="]3Pb*,n}USnCXnN0/GX," x="43" y="190">
+    <field name="NAME">senseHand</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="}tMxL?O]*um2)fm0J!m6">
+        <field name="VAR">sense</field>
+        <value name="VALUE">
+          <block type="io_digitalread" id="Vx(pJp-G.Zl[d{|v!sv~">
+            <field name="PIN">4</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="logic_compare" id="5mxPH:3,mH:qk.3^N|SC">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="variables_get" id="#xIv1wVuBUF~B)KP7lr`">
+            <field name="VAR">sense</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="ir*0K)jaG3S[56;Ut@-?">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defnoreturn" id="Ev-t`OU,9VN^/t_PAwtM" x="49" y="300">
+    <field name="NAME">ifObstacle</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="Rx6#lQ;JN=9`3+[azY2(">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="procedures_callreturn" id="Re=o~Ht|dwX^~=~VlvK9">
+            <mutation name="senseHand"></mutation>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="mZ+3t{?y=@0cm]G2U?:(">
+            <mutation name="stop"></mutation>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="procedures_callnoreturn" id="8%::t~-erMI74Gp{;p1H">
+            <mutation name="backward"></mutation>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="(e_Yxds-K8M.{`x%r`Su" x="313" y="299">
+    <field name="NAME">backward</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="OzmqR_JrN2)({(Vckf}D">
+        <field name="PIN">7</field>
+        <value name="STATE">
+          <block type="io_highlow" id="r^{!u/ZU~G5H]:Fr9!6X">
+            <field name="STATE">LOW</field>
+          </block>
+        </value>
+        <next>
+          <block type="io_digitalwrite" id="bq4,S]MAR;F-Or;!sQZR">
+            <field name="PIN">8</field>
+            <value name="STATE">
+              <block type="io_highlow" id="lHLkldt+LV#.wuiW3J8H">
+                <field name="STATE">HIGH</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id=".r*q*!dwSz[R9aMLMIg4">
+                <field name="PIN">9</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="ozs+sZUW_y4670`n%Il0">
+                    <field name="STATE">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_digitalwrite" id="_@w91-w:MTS(d_wVo1T(">
+                    <field name="PIN">10</field>
+                    <value name="STATE">
+                      <block type="io_highlow" id="s5Yk}B{HXG+(TG?}xv6t">
+                        <field name="STATE">HIGH</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
