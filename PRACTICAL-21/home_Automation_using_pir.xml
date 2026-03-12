@@ -1,0 +1,76 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="KF=a1C8gCuqAk~L(p2A(" x="111" y="32">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="P%(#5tyTKjCcn~0-AmQG">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="procedures_callreturn" id="Uo7vThHs,!]+^:0ZuHt9">
+            <mutation name="pirOutput"></mutation>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="N*X)ziyn/+dVc8,9d6vR">
+            <mutation name="ledOn"></mutation>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="procedures_callnoreturn" id="rgkLxwpCLpJ#s(P1#bn}">
+            <mutation name="ledOff"></mutation>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="gdZOi}E{{T1s(VN+TuDK" x="295" y="196">
+    <field name="NAME">pirOutput</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="procedures_ifreturn" id="V~1ZU65)O+nQqADmTx+Z">
+        <mutation value="1"></mutation>
+        <value name="CONDITION">
+          <block type="io_digitalread" id="k8BHii}~7~hD`6{~qr#4">
+            <field name="PIN">4</field>
+          </block>
+        </value>
+        <value name="VALUE">
+          <block type="logic_boolean" id=";tjxVSd^?!9ti[j;-Qam">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="logic_boolean" id="?h0=VwrtFCRhzMMsp`Cm">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defnoreturn" id="b9tV3lQ:`tm8OILxKj(4" x="64" y="366">
+    <field name="NAME">ledOn</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="y%AvqkMPjGAdl:%O?ed2">
+        <field name="PIN">7</field>
+        <value name="STATE">
+          <block type="io_highlow" id="M}M}MM-?DNB2v=3/Hg!L">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="T0z_q=(J!|bgPXOKSif." x="433" y="366">
+    <field name="NAME">ledOff</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="?tgSxTbSzKO=L*lgx49k">
+        <field name="PIN">7</field>
+        <value name="STATE">
+          <block type="io_highlow" id="W,!99A|YP.,/B}#H9Gt,">
+            <field name="STATE">LOW</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
