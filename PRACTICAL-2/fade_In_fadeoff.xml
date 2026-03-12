@@ -1,0 +1,128 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="^JqD)as-a03=ra-fI+E[" x="157" y="-66">
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="!uPS3Dux1dmdu|CxVK6E">
+        <mutation name="FADEIN"></mutation>
+        <next>
+          <block type="procedures_callnoreturn" id=";uFZy=bQ8sfrw=yOQrR{">
+            <mutation name="FADEOFF"></mutation>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="/oEZJ4P9m-8Oa[|V4O02" x="3" y="135">
+    <field name="NAME">FADEIN</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="f{#UkOs)#ZpK5N`sl/B,">
+        <field name="VAR">BRIGHTNESS</field>
+        <value name="VALUE">
+          <block type="math_number" id="X(tG`3AK*BDjq3dPc1uE">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_repeat_ext" id="N^6l|;)n;KYc`4}JjY#f">
+            <value name="TIMES">
+              <block type="math_number" id="=yV#cHJ4sF)erJ,Rq`5,">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id=")B?lA6*g@#[W*e2?;h!=">
+                <field name="VAR">BRIGHTNESS</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="kyQlG@ZW)|9hGsq7/23Z">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="YuXGZF!gOdG}GL([t{#Q">
+                        <field name="VAR">BRIGHTNESS</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="_?7Ipa+S}x*Uz?{8dbDd">
+                        <field name="NUM">25</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="CDotZF(VCpmji7A2EngF">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="T4?w;WRx-2|;X8EBl@hw">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="io_analogwrite" id="|,;etg6ob[^GH6AbKwT#">
+                        <field name="PIN">3</field>
+                        <value name="NUM">
+                          <block type="variables_get" id="g}HFkQKruXU!r!`}!Rpj">
+                            <field name="VAR">BRIGHTNESS</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="GXvbfrS@pJwuHL=unkJ?" x="516" y="137">
+    <field name="NAME">FADEOFF</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_repeat_ext" id="nC[3fB{=mQupnOj[g~^g">
+        <value name="TIMES">
+          <block type="math_number" id="wpnw.`=BhJZ2D5WFQ/;l">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="@k5R+ie%2JK]v3|t/!^F">
+            <field name="VAR">BRIGHTNESS</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="l(sD|U8orzjg)DaZb/2i">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <block type="variables_get" id=".eLv=+**2qbR4QugsqGI">
+                    <field name="VAR">BRIGHTNESS</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="Ce4]QVwmsouS?QihpCW@">
+                    <field name="NUM">25</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="h_Niy_|ItYDx#u)M{;7w">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="?iiyi119*Xi`orKLya@R">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="io_analogwrite" id="AQgPzFV=M+ZwhlZ8YG_A">
+                    <field name="PIN">3</field>
+                    <value name="NUM">
+                      <block type="variables_get" id="5e%(RdbDy8,7O@}NQSwU">
+                        <field name="VAR">BRIGHTNESS</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
