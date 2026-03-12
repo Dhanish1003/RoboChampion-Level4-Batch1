@@ -1,0 +1,81 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="EyO=2XiUZbDTjl^EcGx_" x="47" y="44">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="[-=DbhiWSoF:NyYPgz0*">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="procedures_callreturn" id="EHeFXg{d=j%F?di[l-rN">
+            <mutation name="senseHand"></mutation>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="/M:tp;nnBJ,%{|EuN^Eq">
+            <mutation name="buzzerOff"></mutation>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="procedures_callnoreturn" id="JcL%#VQhs7:?ip9_fiWf">
+            <mutation name="buzzerOn"></mutation>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="*V[p5*9y6~g;;Kuzu50(" x="319" y="221">
+    <field name="NAME">buzzerOff</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="82i-kE(DlY]M%:19/S1x">
+        <field name="PIN">5</field>
+        <value name="STATE">
+          <block type="io_highlow" id="ZY3n!}[H-xKjCSA%Ri7X">
+            <field name="STATE">LOW</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="U]g~x7]-a|J@,7]#+5si" x="109" y="272">
+    <field name="NAME">buzzerOn</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="PM(Kl)kPyA=5pFL[+t}{">
+        <field name="PIN">5</field>
+        <value name="STATE">
+          <block type="io_highlow" id="MR-u=^NYAp_]#7D1l#]-">
+            <field name="STATE">HIGH</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id=",?VS)[O3C15zRq+8`Q]2" x="-10" y="389">
+    <field name="NAME">senseHand</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="+%GBZ|ILi8HM{x(2VB_`">
+        <field name="VAR">sense</field>
+        <value name="VALUE">
+          <block type="io_digitalread" id="QvZBeobYYFN!LWLDkRJ6">
+            <field name="PIN">3</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="math_arithmetic" id="Gk0zP)(%Qy*d==l-d9X{">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <block type="variables_get" id="=631fptmb_^ZAzV|e4|1">
+            <field name="VAR">sense</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="eiEg3C^A}O!H.FI~b%Xo">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>
